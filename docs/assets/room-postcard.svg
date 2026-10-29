@@ -1,0 +1,87 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 650" role="img" aria-labelledby="postcardTitle postcardDesc">
+  <title id="postcardTitle">小猫邮局的一个下午</title>
+  <desc id="postcardDesc">奶油色小屋里，橘白小猫坐在软窝和红色邮筒旁，窗边有植物，一封信正在等你。</desc>
+  <defs>
+    <clipPath id="postcardCatClip"><path d="M42 197 C30 188 22 177 23 162 C23 148 29 135 37 124 C40 106 43 90 51 86 C60 81 72 96 80 107 C89 106 98 106 107 107 C115 95 121 83 130 82 C140 82 145 103 148 122 C158 135 165 149 165 164 C164 177 157 188 148 196 C155 219 164 242 166 263 C169 282 165 300 155 306 C147 310 134 308 126 305 C118 312 103 312 95 306 C86 313 72 312 64 305 C57 309 43 310 34 305 C24 300 23 286 24 273 C25 249 34 220 42 197 Z"/></clipPath>
+    <pattern id="postcardPaperDots" width="27" height="27" patternUnits="userSpaceOnUse"><circle cx="7" cy="11" r=".65" fill="#b6a98b" opacity=".22"/></pattern>
+  </defs>
+  <path fill="#fff9eb" d="M26 14 Q439 5 874 18 Q885 272 878 626 Q444 640 19 627 Q11 305 26 14 Z"/>
+  <path fill="url(#postcardPaperDots)" d="M26 14 H874 V627 H19 Z"/>
+  <path fill="none" stroke="#d7ccb2" stroke-width="1.5" stroke-dasharray="5 8" d="M43 34 Q449 24 855 38 L856 609 Q454 620 41 608 Z"/>
+  <g fill="none" stroke="#494a3f" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+    <path stroke="#c9bea5" d="M70 500 Q446 492 833 502 M115 540 L172 540 M541 545 L617 545 M705 521 L791 521"/>
+    <path stroke="#d2c7af" stroke-width="1.4" d="M166 502 V550 M369 500 V548 M628 500 V550"/>
+    <g transform="rotate(-1.6 240 230)">
+      <path fill="#e1dfc4" stroke="#a8a58d" d="M101 103 Q120 97 140 104 L145 338 Q121 348 104 340 Z M342 103 Q364 97 385 105 L383 340 Q364 347 343 339 Z"/>
+      <path fill="#f5f0da" stroke="#96957f" d="M130 115 H357 V330 H130 Z"/>
+      <path fill="#d9e4d4" stroke="#858d78" d="M145 130 H343 V316 H145 Z"/>
+      <path fill="#f2dfad" stroke="none" d="M319 144 C297 134 282 147 286 166 C292 191 323 188 328 168 C320 175 306 170 307 159 Q308 149 319 144 Z"/>
+      <path fill="#adbf9e" stroke="none" d="M146 279 Q165 242 184 267 Q205 230 228 273 Q257 231 279 263 Q307 234 343 272 V316 H146 Z"/>
+      <path stroke="#929b83" d="M245 131 V316 M146 223 H343"/>
+      <path stroke="#edf1df" stroke-width="2" d="M165 146 L192 137 M167 162 L179 158 M301 292 L323 284"/>
+      <path fill="#e4dfc8" stroke="#96957f" d="M121 330 H366 L369 342 H119 Z"/>
+      <path stroke="#bbb99e" stroke-width="1.3" d="M112 117 L118 327 M373 118 L369 327"/>
+    </g>
+    <g transform="translate(723 242) rotate(7)">
+      <path stroke="#7f8b6e" d="M22 126 Q27 81 3 33 M23 111 Q44 75 58 46 M18 94 Q4 72 -20 63"/>
+      <path fill="#9eac85" stroke="#7f8b6e" d="M3 33 C-18 16 -13 -1 -3 -8 C18 2 19 23 3 33 Z M58 46 C51 19 65 6 82 9 C84 29 74 42 58 46 Z M-20 63 C-46 66 -53 51 -52 39 C-33 33 -18 44 -20 63 Z"/>
+      <path fill="#e7d7b2" stroke="#96907b" d="M-4 125 H52 L43 174 H5 Z"/>
+      <path stroke="#b4aa8d" stroke-width="1.2" d="M3 135 H43 M5 141 H41"/>
+    </g>
+    <g transform="rotate(4 239 509)">
+      <ellipse fill="#c4ceb4" stroke="#8b9979" cx="240" cy="505" rx="153" ry="50"/>
+      <path fill="#bac6a7" stroke="#8b9979" d="M88 505 Q101 549 241 554 Q374 550 393 506 L384 541 Q360 574 241 577 Q119 574 96 542 Z"/>
+      <ellipse fill="#f1e2c1" stroke="#b1a98d" cx="240" cy="504" rx="129" ry="34"/>
+      <path stroke="#d8c59c" stroke-width="1.2" d="M133 496 L346 520 M146 484 L366 507 M179 475 L168 526 M220 471 L211 536 M263 473 L254 537 M305 478 L297 531"/>
+      <path stroke="#edf0df" stroke-width="1.7" stroke-dasharray="4 7" d="M104 534 Q145 563 242 563 Q338 562 377 533"/>
+      <path fill="#ede3c4" stroke="#a49e83" stroke-width="1.2" d="M252 551 L281 547 L284 566 L255 569 Z"/>
+      <path stroke="#9e9c80" stroke-width="1.3" d="M261 557 Q264 552 268 557 Q271 550 275 555 Q277 559 269 564 Q262 562 261 557 Z"/>
+    </g>
+    <g transform="translate(398 183) scale(1.1)" stroke="#34352e" stroke-width="6" stroke-linecap="round" stroke-linejoin="round">
+      <path fill="#d9a46f" d="M159 265 C174 258 182 244 186 228 C189 217 182 207 187 197 C191 187 202 188 207 197 C215 211 216 228 210 244 C203 265 186 283 162 291 Z"/>
+      <path stroke="#b77b4f" stroke-width="4" d="M189 211 210 210 M188 233 211 239 M178 257 194 267"/>
+      <path fill="#fff9e9" d="M42 197 C30 188 22 177 23 162 C23 148 29 135 37 124 C40 106 43 90 51 86 C60 81 72 96 80 107 C89 106 98 106 107 107 C115 95 121 83 130 82 C140 82 145 103 148 122 C158 135 165 149 165 164 C164 177 157 188 148 196 C155 219 164 242 166 263 C169 282 165 300 155 306 C147 310 134 308 126 305 C118 312 103 312 95 306 C86 313 72 312 64 305 C57 309 43 310 34 305 C24 300 23 286 24 273 C25 249 34 220 42 197 Z"/>
+      <g clip-path="url(#postcardCatClip)" stroke="none">
+        <path fill="#d9a46f" d="M146 230 C166 222 179 247 171 265 C165 282 145 289 135 276 C123 261 130 238 146 230 Z M112 103 C123 89 134 79 143 99 C150 113 160 125 164 145 C151 154 134 147 125 135 C118 124 113 113 112 103 Z"/>
+        <path fill="#efd1bf" d="M45 114 C47 102 50 95 54 96 C60 97 66 104 70 112 Z M119 110 C123 100 127 94 131 94 C136 97 137 105 139 115 Z"/>
+      </g>
+      <path stroke="#b77b4f" stroke-width="4" d="M86 112 88 122 M97 111 96 123 M108 113 104 122"/>
+      <g fill="#65513d" stroke="none"><ellipse cx="71.7" cy="153.7" rx="4.2" ry="5"/><ellipse cx="115.7" cy="153" rx="4.2" ry="5"/></g>
+      <path fill="#34352e" stroke="none" d="M91 168 Q95 166 99 168 L95 172 Z"/>
+      <path stroke-width="3" d="M95 172 V177 M89 177 Q92 182 95 177 Q98 182 101 177"/>
+      <path d="M15 158 26 161 M15 178 27 175 M159 154 173 151 M160 169 171 172 M60 280 C61 290 61 300 65 305 M95 270 V305 M129 279 C128 291 128 299 125 305"/>
+    </g>
+    <g transform="rotate(-4 689 433)">
+      <path fill="#a5a88b" stroke="#737c64" stroke-width="3" d="M680 421 H696 V534 H680 Z"/>
+      <path fill="#ba6c50" stroke="#805641" stroke-width="3.5" d="M637 441 V353 Q635 318 681 318 H714 Q755 320 755 356 V441 Z"/>
+      <path fill="#cc8467" stroke="#805641" stroke-width="2.6" d="M637 441 V353 Q636 321 668 320 Q699 320 699 353 V441 Z"/>
+      <path fill="#5f5b49" stroke="none" d="M650 351 H686 V360 H650 Z"/>
+      <path stroke="#e9b79b" stroke-width="1.4" d="M646 432 V369 M708 429 H746"/>
+      <path fill="#fbefcf" stroke="#92715b" stroke-width="1.2" d="M649 382 H688 V412 H649 Z"/>
+      <path stroke="#ba6c50" stroke-width="1.4" d="M654 390 669 400 684 390"/>
+      <path fill="#8c9978" stroke="#627353" stroke-width="2.5" d="M751 369 V313 H779 V330 H751"/>
+      <circle fill="#fff5df" stroke="none" cx="745" cy="372" r="3"/>
+    </g>
+    <g transform="translate(635 179) rotate(9)">
+      <path fill="#fffdf2" stroke="#b3a58b" stroke-width="1.8" d="M0 0 H107 V73 H0 Z"/>
+      <path stroke="#c38b71" stroke-width="2" d="M7 8 54 41 100 8 M7 65 36 38 M100 65 72 38"/>
+      <path fill="#e6c8ac" stroke="none" d="M48 34 Q42 22 37 29 Q32 36 49 47 Q65 36 60 29 Q54 23 48 34 Z"/>
+    </g>
+    <path stroke="#ad9274" stroke-width="1.6" stroke-dasharray="3 6" d="M685 271 Q686 291 699 299"/>
+    <path stroke="#ad9274" stroke-width="1.6" d="M693 296 702 301 704 290"/>
+    <path stroke="#b18b67" stroke-width="2" d="M395 169 Q408 147 435 157 M427 151 438 157 429 164"/>
+    <path stroke="#b6a782" stroke-width="2" d="M80 388 86 374 91 388 105 393 91 398 85 411 80 398 67 393 Z M783 135 V152 M775 143 H791"/>
+  </g>
+  <g font-family="KaiTi, STKaiti, Microsoft YaHei, serif" fill="#77765f">
+    <text x="84" y="77" font-size="24" letter-spacing="3" transform="rotate(-2 84 77)">给今天，留一个软软的角落。</text>
+    <text x="582" y="133" font-size="23" fill="#aa6a4e" transform="rotate(6 582 133)">有信啦！</text>
+    <text x="294" y="162" font-size="16" transform="rotate(-7 294 162)">小猫的好天气</text>
+    <text x="106" y="459" font-size="16" transform="rotate(-5 106 459)">软软窝</text>
+    <text x="544" y="586" font-size="20" letter-spacing="2" transform="rotate(-2 544 586)">小小的祝福，认真送到。</text>
+  </g>
+  <g transform="translate(741 57) rotate(13)" fill="none" stroke="#ba6c50" opacity=".76">
+    <path stroke-width="1.7" d="M0 0 H83 V64 H0 Z M6 6 H77 V58 H6 Z" stroke-dasharray="2 3"/>
+    <g fill="#ba6c50" stroke="none"><ellipse cx="29" cy="23" rx="5" ry="7" transform="rotate(-22 29 23)"/><ellipse cx="40" cy="18" rx="5" ry="7"/><ellipse cx="51" cy="22" rx="5" ry="7" transform="rotate(22 51 22)"/><ellipse cx="58" cy="32" rx="4" ry="6" transform="rotate(38 58 32)"/><path d="M28 39 C27 31 37 27 43 29 C50 31 56 39 50 44 C45 48 42 43 38 44 C32 47 26 45 28 39 Z"/></g>
+    <text x="41" y="55" text-anchor="middle" fill="#ba6c50" stroke="none" font-family="KaiTi, STKaiti, serif" font-size="9" letter-spacing="2">小猫邮局</text>
+  </g>
+</svg>

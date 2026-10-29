@@ -1,0 +1,27 @@
+const {BrowserWindow}=require('electron'),fs=require('node:fs'),path=require('node:path'),assert=require('node:assert/strict');
+const wait=ms=>new Promise(r=>setTimeout(r,ms));
+module.exports=async ctx=>{
+ const {pet,house,settings,snapshot,command,output,issues}=ctx,checks=[];
+ const check=(name,ok)=>{assert.ok(ok,name);checks.push(name);};
+ const js=(w,code)=>w.webContents.executeJavaScript(code);
+ await wait(300);
+ check('first launch shows adoption card',await js(house,`document.getElementById('adoptionDialog').open`));
+ check('desktop pet waits for adoption',!pet.isVisible());
+ await house.webContents.capturePage().then(img=>fs.writeFileSync(path.join(path.dirname(output),'onboarding.png'),img.toPNG()));
+ await js(house,`document.querySelector('[data-setup-coat="ink"]').click();document.getElementById('setupName').value='豆包';document.getElementById('setupName').dispatchEvent(new Event('input'));document.getElementById('setupEyes').value='120';document.getElementById('setupEyes').dispatchEvent(new Event('input'));document.getElementById('adoptionNext').click();const today=DeskcatMail.dayKey();document.getElementById('birthdayMonth').value=today.slice(5,7);document.getElementById('birthdayMonth').dispatchEvent(new Event('change'));document.getElementById('birthdayDay').value=today.slice(8,10);document.getElementById('adoptionForm').requestSubmit();`);
+ await wait(450);
+ check('appearance set during adoption',settings.pet.name==='豆包'&&settings.pet.coat==='ink'&&settings.pet.eyeSize===1.2);
+ check('birthday stores month and day only',/^\d{2}-\d{2}$/.test(snapshot().profile.birthday));
+ check('onboarding saves and closes',snapshot().profile.completed&&!(await js(house,`document.getElementById('adoptionDialog').open`)));
+ check('welcome and birthday delivered together',snapshot().profile.letters.some(l=>l.kind==='welcome')&&snapshot().profile.letters.some(l=>l.kind==='birthday'));
+ await js(house,`document.getElementById('mailboxButton').click()`);await wait(200);
+ check('mailbox opens a readable letter',await js(house,`document.getElementById('mailDialog').open&&document.getElementById('letterLines').children.length===3`));
+ check('letter has cat paw signature',await js(house,`!!document.querySelector('.paw-print svg')&&document.getElementById('letterSignature').textContent.includes('豆包')`));
+ await wait(250);check('read status syncs across native windows',snapshot().profile.letters.some(l=>l.read));
+ await house.webContents.capturePage().then(img=>fs.writeFileSync(path.join(path.dirname(output),'letter.png'),img.toPNG()));
+ const count=snapshot().profile.letters.length;await js(house,`document.getElementById('previewHoliday').click()`);await wait(150);check('preview is labelled and never adds a real letter',!(await js(house,`document.getElementById('letterDemo').hidden`))&&snapshot().profile.letters.length===count);
+ await js(house,`document.getElementById('mailClose').click()`);command('show-pet');await wait(120);check('native mail action is available',await js(pet,`!!document.getElementById('nativeMail')`));
+ command('mail');await wait(150);check('desktop command opens house mailbox',house.isVisible()&&(await js(house,`document.getElementById('mailDialog').open`)));await js(house,`document.getElementById('mailClose').click()`);
+ await require('./portfolio-web-smoke.cjs')({output,checks,issues});
+ await require('./smoke.cjs')({...ctx,checks});
+};

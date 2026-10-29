@@ -1,0 +1,53 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 45 234 285" data-coat="siamese" data-pattern="point"><style>.draw{fill:none;stroke:#303128;stroke-width:6;stroke-linecap:round;stroke-linejoin:round}.fur{fill:#eee2ca}.patch{fill:#7c6557}.stripe{fill:none;stroke:#6b584e;stroke-width:4.5;stroke-linecap:round}.eyes{stroke-width:3}.eye-open{fill:#6b9cb8;stroke:none}.nose{fill:#303128;stroke:none}#mouth{stroke-width:3}.desk-nap,.nest-nap,.kibble-food,.can-food,.lifted-paw,.sparkles,.hearts,.sleep-z,.accent-marks,.eye-happy,.eye-sleep,.longhair-tufts{display:none}.siamese-mask{display:block}.face-mark,.forehead-stripes{display:none}</style>
+<defs><clipPath id="lineCatClip"><path id="lineCatClipPath" d="M42 197 C30 188 22 177 23 162 C23 148 29 135 37 124 C40 106 43 90 51 86 C60 81 72 96 80 107 C89 106 98 106 107 107 C115 95 121 83 130 82 C140 82 145 103 148 122 C158 135 165 149 165 164 C164 177 157 188 148 196 C155 219 164 242 166 263 C169 282 165 300 155 306 C147 310 134 308 126 305 C118 312 103 312 95 306 C86 313 72 312 64 305 C57 309 43 310 34 305 C24 300 23 286 24 273 C25 249 34 220 42 197 Z"/></clipPath></defs>
+<g class="draw">
+<g class="normal-cat">
+  <g class="tail"><path class="patch" d="M159 265 C174 258 182 244 186 228 C189 217 182 207 187 197 C191 187 202 188 207 197 C215 211 216 228 210 244 C203 265 186 283 162 291 Z"/><path class="stripe" d="M189 211 210 210 M188 233 211 239 M178 257 194 267"/></g>
+  <g class="body-breathe">
+    <path id="lineCatOutline" class="fur" d="M42 197 C30 188 22 177 23 162 C23 148 29 135 37 124 C40 106 43 90 51 86 C60 81 72 96 80 107 C89 106 98 106 107 107 C115 95 121 83 130 82 C140 82 145 103 148 122 C158 135 165 149 165 164 C164 177 157 188 148 196 C155 219 164 242 166 263 C169 282 165 300 155 306 C147 310 134 308 126 305 C118 312 103 312 95 306 C86 313 72 312 64 305 C57 309 43 310 34 305 C24 300 23 286 24 273 C25 249 34 220 42 197 Z"/>
+    <g clip-path="url(#lineCatClip)">
+      <path class="body-mark patch" stroke="none" d="M146 230 C166 222 179 247 171 265 C165 282 145 289 135 276 C123 261 130 238 146 230 Z"/>
+      <g class="head">
+        <path class="face-mark patch" stroke="none" d="M112 103 C123 89 134 79 143 99 C150 113 160 125 164 145 C151 154 134 147 125 135 C118 124 113 113 112 103 Z"/>
+        <path class="siamese-mask patch" stroke="none" d="M48 153 C46 130 65 119 94 121 C126 117 148 130 145 155 C143 182 120 191 94 190 C67 191 49 180 48 153 Z"/>
+        <g class="ear"><path class="inner-ear" stroke="none" fill="#efd1bf" d="M45 114 C47 102 50 95 54 96 C60 97 66 104 70 112 Z"/></g>
+        <path class="inner-ear" stroke="none" fill="#efd1bf" d="M119 110 C123 100 127 94 131 94 C136 97 137 105 139 115 Z"/>
+        <path class="forehead-stripes" fill="none" stroke="var(--stripe)" stroke-width="4" d="M86 112 88 122 M97 111 96 123 M108 113 104 122"/>
+        <g class="eyes"><g class="eye-open" stroke="none"><ellipse cx="71.7" cy="153.7" rx="4.2" ry="5"/><ellipse cx="115.7" cy="153" rx="4.2" ry="5"/></g><path class="eye-happy" d="M66 154 Q72 147 78 154 M110 153 Q116 146 122 153"/><path class="eye-sleep" d="M66 154 Q72 159 78 154 M110 153 Q116 158 122 153"/></g>
+        <path class="nose" stroke="none" d="M91 168 Q95 166 99 168 L95 172 Z"/>
+        <path id="mouth" d="M95 172 V177 M89 177 Q92 182 95 177 Q98 182 101 177"/>
+      </g>
+    </g>
+    <g class="whisker-motion"><path class="whiskers" d="M15 158 26 161 M15 178 27 175 M159 154 173 151 M160 169 171 172"/></g>
+    <path d="M60 280 C61 290 61 300 65 305 M95 270 V305 M129 279 C128 291 128 299 125 305"/>
+    <path class="longhair-tufts fur" d="M60 202 63 216 58 219 69 228 68 234 81 232 94 240 105 232 118 234 117 225 128 218 123 204 Q95 220 60 202 Z"/>
+  </g>
+  <g class="accent-marks"><path d="M104 53 100 34 M126 51 131 33 M146 58 157 43"/></g>
+</g>
+<g class="desk-nap sleep-art"><g transform="translate(-10 50) scale(1.1 .84)">
+<path class="fur" d="M43 286 C39 279 40 271 44 265 C40 253 42 242 49 244 L64 251 C72 247 80 247 89 248 C94 235 99 231 104 240 L111 253 C135 248 156 255 168 270 C181 286 177 303 164 311 C150 320 130 320 110 317 L69 316 C50 315 41 307 43 296 Z"/>
+<path class="patch" stroke="none" d="M127 253 C146 254 160 261 169 275 C158 286 136 277 127 253 Z"/>
+<path class="patch" stroke="none" d="M89 248 Q97 236 102 240 L110 258 Q112 274 100 282 Q87 273 89 248 Z"/>
+<path class="fur nap-tail" d="M157 287 C150 300 133 304 116 301 C106 299 101 303 103 310 C107 320 135 321 153 316 C164 313 171 306 173 299"/>
+<path class="fur" d="M45 302 C55 303 67 302 78 303 Q87 307 81 313 Q70 320 51 314 Q44 312 45 302 Z M78 303 Q86 300 94 302 Q103 307 97 312 Q91 317 80 315"/>
+<path class="sleep-eyes" d="M52 281 Q58 287 64 281 M82 276 Q88 282 94 276"/>
+<path class="sleep-divider" d="M113 267 Q118 280 103 294"/>
+<path stroke-width="3" d="M73 292 Q77 296 81 291 M38 285 45 285 M39 294 46 291"/>
+<path class="stripe" d="M132 302 134 317 M149 297 155 312"/></g></g>
+<g class="nest-nap sleep-art">
+<path class="fur" d="M43 286 C39 279 40 271 44 265 C40 253 42 242 49 244 L64 251 C72 247 80 247 89 248 C94 235 99 231 104 240 L111 253 C135 248 156 255 168 270 C181 286 177 303 164 311 C150 320 130 320 110 317 L69 316 C50 315 41 307 43 296 Z"/>
+<path class="patch" stroke="none" d="M127 253 C146 254 160 261 169 275 C158 286 136 277 127 253 Z"/>
+<path class="patch" stroke="none" d="M89 248 Q97 236 102 240 L110 258 Q112 274 100 282 Q87 273 89 248 Z"/>
+<path class="fur nap-tail" d="M157 287 C150 300 133 304 116 301 C106 299 101 303 103 310 C107 320 135 321 153 316 C164 313 171 306 173 299"/>
+<path class="fur" d="M45 302 C55 303 67 302 78 303 Q87 307 81 313 Q70 320 51 314 Q44 312 45 302 Z M78 303 Q86 300 94 302 Q103 307 97 312 Q91 317 80 315"/>
+<path class="sleep-eyes" d="M52 281 Q58 287 64 281 M82 276 Q88 282 94 276"/>
+<path class="sleep-divider" d="M113 267 Q118 280 103 294"/>
+<path stroke-width="3" d="M73 292 Q77 296 81 291 M38 285 45 285 M39 294 46 291"/>
+<path class="stripe" d="M132 302 134 317 M149 297 155 312"/></g>
+<g class="kibble-food"><path fill="#e5dfc9" d="M73 286 117 286 111 309 Q95 317 79 309 Z"/><ellipse fill="#d1ad78" cx="95" cy="286" rx="22" ry="7"/><path stroke="#987a51" stroke-width="3" d="M81 285 83 286 M91 282 93 283 M101 288 103 287 M108 283 110 284"/></g>
+<g class="can-food"><path fill="#b6bba9" d="M73 284 V308 Q95 320 117 308 V284 Z"/><ellipse fill="#d49c83" cx="95" cy="284" rx="22" ry="8"/><path stroke="#fff5de" d="M79 298 111 298 M79 303 111 303"/><ellipse fill="#d8d9cd" cx="130" cy="278" rx="6" ry="16" transform="rotate(32 130 278)"/></g>
+<g class="lifted-paw"><path class="fur" d="M111 301 Q103 282 111 274 Q116 267 120 273 Q125 264 130 272 Q137 267 141 276 Q146 287 134 303 Z"/><g fill="#d7a59a" stroke="none"><ellipse cx="123" cy="288" rx="7" ry="6"/><circle cx="112" cy="278" r="2.5"/><circle cx="122" cy="274" r="2.5"/><circle cx="132" cy="278" r="2.5"/></g></g>
+<g class="sparkles" stroke="#c9a261" stroke-width="2"><path d="M39 119 V134 M31 127 H47 M185 88 V103 M178 96 H192"/></g>
+<g class="hearts" fill="#d49c89" stroke="none"><path d="M35 123 Q23 111 19 120 Q14 129 35 141 Q54 126 48 119 Q41 112 35 123 Z"/></g>
+<g class="sleep-z" stroke="#89967b" stroke-width="2"><path d="M163 234 H175 L164 247 H177 M184 216 H193 L185 226 H195"/></g>
+</g></svg>

@@ -1,0 +1,19 @@
+{
+  "name": "little-deskcat",
+  "version": "0.2.0",
+  "description": "爪爪小窝：桌边陪伴、生日与节日来信",
+  "main": "app/main.cjs",
+  "author": "Little Deskcat",
+  "license": "UNLICENSED",
+  "private": true,
+  "scripts": {
+    "start": "electron .",
+    "pack": "node build.mjs",
+    "test": "node test/mail.test.cjs"
+  },
+  "devDependencies": {
+    "@electron/packager": "20.3.0",
+    "electron": "45.0.0",
+    "lunar-javascript": "1.7.7"
+  }
+}
