@@ -1,5 +1,9 @@
 # 爪爪小窝 · Paws Nest
 
+> **直接使用请下载 [Windows 客户端](https://github.com/Pyslowpoke/paws-nest/releases/download/v0.2.0/paws-nest-windows-x64.zip)**，完整解压后运行 PawsNest.exe。源码包不含该程序，desktop/delivery 下的启动脚本是打包模板。
+
+源码开发：安装 Node.js 22 或以上后，在 desktop 文件夹双击“开发启动.cmd”；首次运行会下载依赖。也可按下文使用 pnpm。
+
 桌边的小小陪伴。一只手绘小猫，和一段慢慢来的日子。
 
 [打开作品介绍](https://pyslowpoke.github.io/paws-nest/) · [直接进入小窝](https://pyslowpoke.github.io/paws-nest/play/)

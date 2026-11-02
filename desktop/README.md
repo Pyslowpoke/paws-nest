@@ -1,5 +1,9 @@
 # 爪爪小窝 0.2
 
+> **直接使用请下载 [Windows 客户端](https://github.com/Pyslowpoke/paws-nest/releases/download/v0.2.0/paws-nest-windows-x64.zip)**，完整解压后运行 PawsNest.exe。源码包不含该程序，desktop/delivery 下的启动脚本是打包模板。
+
+源码开发：安装 Node.js 22 或以上后，在 desktop 文件夹双击“开发启动.cmd”；首次运行会下载依赖。也可按下文使用 pnpm。
+
 桌边的小小陪伴。一只可以换外观、被摸摸、吃饭和打盹的简笔画小猫，以及会在生日和中国法定节日收到信的小窝。
 
 这是可运行的个人作品集体验版，使用 AI 辅助设计和开发。当前角色使用 SVG 分层与程序动画，不依赖在线模型、账号登录、付费 API 或外部字体。
