@@ -1,0 +1,25 @@
+'use strict';
+const fs=require('node:fs'),path=require('node:path'),assert=require('node:assert/strict');const wait=ms=>new Promise(r=>setTimeout(r,ms));
+module.exports=async({pet,house,chat,command,settings,output,app,issues})=>{
+ const checks=[],check=(name,ok)=>{assert.ok(ok,name);checks.push(name);},js=code=>house.webContents.executeJavaScript(code);fs.mkdirSync(path.dirname(output),{recursive:true});
+ settings.profile.completed=true;await js(`document.getElementById('adoptionDialog').close()`);command('chat');await wait(250);
+ check('chat opens from native command',await js(`document.getElementById('chatDialog').open`));
+ check('no API key required for other pet actions',!chat.snapshot().configured);
+ let called=0;chat.fetchImpl=async(url,opts)=>{called++;check('only official DeepSeek URL receives request',url==='https://api.deepseek.com/chat/completions');const payload=JSON.parse(opts.body);check('companion role and boundary are sent',payload.messages[0].content.includes('不是通用助手'));return {ok:true,json:async()=>({choices:[{message:{content:'热可可听起来暖暖的。今天就先捧着杯子歇一会儿，咪在旁边听你说。'}}]})};};
+ await js(`document.getElementById('chatKey').value='fixture-key-for-ui-test';document.getElementById('chatConfigForm').requestSubmit()`);await wait(500);
+ check('Windows encrypted credential saved',chat.snapshot().configured&&fs.existsSync(chat.keyFile)&&!fs.readFileSync(chat.keyFile).includes(Buffer.from('fixture-key-for-ui-test')));
+ check('key cleared from input and absent from renderer state',await js(`document.getElementById('chatKey').value===''&&desktopCat.chatState().then(r=>!JSON.stringify(r).includes('fixture-key-for-ui-test'))`));
+ await js(`document.getElementById('chatInput').value='我喜欢热可可';document.getElementById('chatForm').requestSubmit()`);await wait(200);
+ check('conversation and cat reply visible',await js(`document.querySelectorAll('.chat-message').length===2&&document.getElementById('chatMessages').textContent.includes('咪在旁边')`));
+ check('explicit preference remembered locally',chat.state.memories.some(m=>m.text==='我喜欢热可可'));
+ check('successful send clears composer',await js(`document.getElementById('chatInput').value===''`));
+ check('chat dialog fits window width',await js(`document.getElementById('chatDialog').getBoundingClientRect().right<=innerWidth`));
+ await house.webContents.capturePage().then(img=>fs.writeFileSync(path.join(path.dirname(output),'chat-with-memory.png'),img.toPNG()));
+ const before=called;await js(`document.getElementById('chatInput').value='请写一个 Python 程序';document.getElementById('chatForm').requestSubmit()`);await wait(150);check('technical request receives local pet boundary response',called===before&&chat.state.messages.at(-1).text.includes('咪不太懂'));
+ chat.fetchImpl=async()=>({ok:false,status:401});await js(`document.getElementById('chatInput').value='今天有点累';document.getElementById('chatForm').requestSubmit()`);await wait(150);check('failure preserves draft and shows useful error',await js(`document.getElementById('chatInput').value==='今天有点累'&&document.getElementById('chatNotice').textContent.includes('Key 无效')`));
+ await js(`document.getElementById('chatMemories').querySelector('button').click()`);await wait(100);check('memory deletion works',chat.state.memories.length===0);
+ await js(`document.getElementById('chatSettings').open=true`);await house.webContents.capturePage().then(img=>fs.writeFileSync(path.join(path.dirname(output),'chat-settings.png'),img.toPNG()));
+ await js(`document.getElementById('chatClose').click()`);command('show-pet');await pet.webContents.executeJavaScript(`document.getElementById('nativeChat').click()`);await wait(150);check('desktop cat chat button opens chat',await js(`document.getElementById('chatDialog').open`));
+ const removed=await js(`desktopCat.chatRemoveKey()`);check('key removable without erasing history',removed.ok&&!chat.snapshot().configured&&chat.state.messages.length===4);
+ check('no renderer errors',issues.length===0);fs.writeFileSync(output,JSON.stringify({passed:true,checks,issues,api:'mocked; no live API calls',secretStorage:'actual Windows safeStorage round trip'},null,2));app.quit();
+};

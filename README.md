@@ -1,6 +1,6 @@
 # 爪爪小窝 · Paws Nest
 
-> **直接使用请下载 [Windows 客户端](https://github.com/Pyslowpoke/paws-nest/releases/download/v0.2.0/paws-nest-windows-x64.zip)**，完整解压后运行 PawsNest.exe。源码包不含该程序，desktop/delivery 下的启动脚本是打包模板。
+> **直接使用请下载 [Windows 客户端](https://github.com/Pyslowpoke/paws-nest/releases/download/v0.3.0/paws-nest-windows-x64.zip)**，完整解压后运行 PawsNest.exe。源码包不含该程序，desktop/delivery 下的启动脚本是打包模板。
 
 源码开发：安装 Node.js 22 或以上后，在 desktop 文件夹双击“开发启动.cmd”；首次运行会下载依赖。也可按下文使用 pnpm。
 
@@ -14,6 +14,7 @@
 - 无需账号的首次领养：名字、六种毛色、眼睛大小和小表情；可随时修改。
 - 摸头、耳朵、尾巴、爪子；猫粮和罐头；桌边与猫窝睡姿。
 - 相遇来信、生日与七类中国法定节日来信，带署名和爪印。
+- Windows 可选 AI 陪伴：自备 DeepSeek Key、简短情绪回应、可查看及删除的本地偏好记忆。小猫不承担通用助手或专业咨询任务。
 - Windows 透明桌宠：拖动、置顶、大小调整、鼠标穿透和托盘菜单。
 
 网页与 Windows 客户端使用相同的 SVG 角色和主要交互。浏览器里的陪伴窗只在网页内，真正悬浮在操作系统桌面上需要 Windows 客户端。
@@ -39,11 +40,13 @@
 
 按中国标准时间计算法定节日本身的日期，不按调休假期逐日发信。生日与节日同日时各发一封。2 月 29 日生日在平年按 2 月 28 日投递。退出应用后不会发送系统通知，再次打开时补寄领养后错过的来信，最多回看上一年与当年。
 
+Windows 端可自愿开启 DeepSeek 聊天。Key 使用 Windows 加密保存，只随请求发送给 DeepSeek；发送时会携带近期对话及启用的偏好记忆，不上传 GitHub。API 可能计费，关闭 AI 不影响养猫。详见 [AI 陪伴说明](desktop/AI陪伴说明.md)。
+
 ## 当前版本与验证
 
-0.2 作品集体验版，使用 AI 辅助设计与开发。角色使用 SVG 分层和程序动画。照片定制、AI 视频动画、亲密度、音乐、云同步及商店发行仍为后续计划。
+0.3 作品集体验版，使用 AI 辅助设计与开发。角色使用 SVG 分层和程序动画。照片定制、AI 视频动画、亲密度、音乐、云同步及商店发行仍为后续计划。
 
-已验证 14 项来信规则和 43 项网页/桌面流程。日期测试可直接运行：`node desktop/test/mail.test.cjs`。
+已验证 14 项来信规则和 43 项网页/桌面流程；新增 11 项聊天单元测试和 16 项原生聊天流程检查。聊天检查使用模拟接口，Windows 加密使用真实系统服务；真实 DeepSeek 质量与账户连通性需填写自己的 Key 后验证。日期测试可直接运行：`node desktop/test/mail.test.cjs`。
 
 ## 第三方与授权
 

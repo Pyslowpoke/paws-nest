@@ -1,12 +1,12 @@
-# 爪爪小窝 0.2
+# 爪爪小窝 0.3
 
-> **直接使用请下载 [Windows 客户端](https://github.com/Pyslowpoke/paws-nest/releases/download/v0.2.0/paws-nest-windows-x64.zip)**，完整解压后运行 PawsNest.exe。源码包不含该程序，desktop/delivery 下的启动脚本是打包模板。
+> **直接使用请下载 [Windows 客户端](https://github.com/Pyslowpoke/paws-nest/releases/download/v0.3.0/paws-nest-windows-x64.zip)**，完整解压后运行 PawsNest.exe。源码包不含该程序，desktop/delivery 下的启动脚本是打包模板。
 
 源码开发：安装 Node.js 22 或以上后，在 desktop 文件夹双击“开发启动.cmd”；首次运行会下载依赖。也可按下文使用 pnpm。
 
 桌边的小小陪伴。一只可以换外观、被摸摸、吃饭和打盹的简笔画小猫，以及会在生日和中国法定节日收到信的小窝。
 
-这是可运行的个人作品集体验版，使用 AI 辅助设计和开发。当前角色使用 SVG 分层与程序动画，不依赖在线模型、账号登录、付费 API 或外部字体。
+这是可运行的个人作品集体验版，使用 AI 辅助设计和开发。当前角色使用 SVG 分层与程序动画，基础养猫不依赖在线模型、账号登录、付费 API 或外部字体。可选 AI 聊天由你自己的 DeepSeek API 提供，可能产生费用。
 
 ## 使用 Windows 版
 
@@ -22,11 +22,17 @@
 
 Windows 版是免安装便携应用，尚未购买代码签名证书。确认来源为本项目后使用。旧版 0.1 与新版共用本地存档；旧版还在运行时，请先从旧版托盘退出，再打开新版。
 
+## 和小猫聊聊
+
+从小屋、桌宠工具栏或托盘打开聊天，在「聊天设置」填写自己的 DeepSeek API Key。Key 由 Windows 加密保存在本机，不会写入源码或上传 GitHub。发送聊天时，请求会直接发给 DeepSeek，并携带近期对话及启用的偏好记忆。不要将 Key 发给项目作者。
+
+小猫的职责是陪伴、倾听及轻松日常，不执行工作任务或提供专业决策。偏好可以查看、添加、删除，也可以关闭自动记忆；聊天记录可单独清空。详细行为边界、存储位置和清除方式见 [AI陪伴说明.md](AI陪伴说明.md)。
+
 ## 网页版
 
-源码包 `website/` 是完整静态站点：根目录为作品介绍页，`play/` 为免登录游戏。网页使用浏览器本地存储；更换设备、浏览器或域名不会自动同步，清理网站数据会清空存档。浏览器小陪伴窗仅在网页内，真正离开浏览器的桌宠需要 Windows 版。
+源码包 `docs/` 是完整静态站点：根目录为作品介绍页，`play/` 为免登录游戏。网页使用浏览器本地存储；更换设备、浏览器或域名不会自动同步，清理网站数据会清空存档。浏览器小陪伴窗仅在网页内，真正离开浏览器的桌宠需要 Windows 版。
 
-生日及信件保存在本地，无账号、联网生成文案、广告追踪或云同步。托管网站的服务商可能记录常规访问日志，参见网页“关于本地资料”。
+生日及信件保存在本地，无账号、广告追踪或云同步；生日与节日信件在本地生成。托管网站的服务商可能记录常规访问日志，参见网页“关于本地资料”。
 
 ## 来信规则
 
@@ -52,15 +58,15 @@ pnpm run pack
 
 在独立 desktop 目录内开发时直接运行后四条命令。打包结果位于 `build/`。打包只生成 Windows x64，默认由 Electron 下载服务获取 Electron 45；如网络受限，可预先准备官方 Electron ZIP，并设置 `DESKCAT_ELECTRON_ZIP_DIR` 指向 ZIP 所在目录。可设置 `DESKCAT_OUTPUT` 更改输出目录。
 
-网站本地预览：从完整源码包根目录运行 `node tools/serve-website.cjs`，打开 http://127.0.0.1:8765/ 。不要双击 HTML 当作正式部署方式。
+网站本地预览：从完整源码包根目录运行 `node scripts/serve.cjs`，打开 http://127.0.0.1:8765/ 。不要双击 HTML 当作正式部署方式。
 
 ## 结构
 
-`app/main.cjs` 管理原生窗口、托盘和受控通信；`preload.cjs` 提供有限接口。`app/room/pet-model.js` 为外观与交互定义，`pet.js` 负责 SVG 动画，`mail-model.js` 为可独立测试的日期与信件规则，`mail-ui.js` 为领养卡及邮筒界面。`website/` 的游戏文件与 desktop/app/room 同步。
+`app/main.cjs` 管理原生窗口、托盘和受控通信；`preload.cjs` 提供有限接口。`app/room/pet-model.js` 为外观与交互定义，`pet.js` 负责 SVG 动画，`mail-model.js` 为可独立测试的日期与信件规则，`mail-ui.js` 为领养卡及邮筒界面。`docs/` 的游戏文件与 desktop/app/room 同步。
 
 原生窗口启用 contextIsolation、sandbox，关闭 Node 页面访问，拒绝页面导航及额外权限。桌面存档继续放在 `%APPDATA%/LittleDeskcat/companion.json`，保留旧标识以兼容旧版；源码包不含开发者个人存档。
 
-`pnpm test` 包括 14 项来信规则验证。开发期间还用 `app/portfolio-smoke.cjs`、`portfolio-web-smoke.cjs` 和 `smoke.cjs` 验证 43 项桌面/网页流程。集成测试需要先运行完整源码包的网站服务，使用 `pnpm exec electron . --smoke=<全新目录的绝对路径>/report.json`；请预先创建该测试目录。测试使用隔离存档，不覆盖正常用户数据。
+`pnpm test` 包括 14 项来信规则和 11 项聊天验证。原生聊天另有 16 项模拟接口检查，覆盖真实 Windows 加密、聊天入口与记忆管理；尚未使用用户 Key 调用真实 DeepSeek。开发期间还用 `app/portfolio-smoke.cjs`、`portfolio-web-smoke.cjs` 和 `smoke.cjs` 验证 43 项桌面/网页流程。集成测试需要先运行完整源码包的网站服务，使用 `pnpm exec electron . --smoke=<全新目录的绝对路径>/report.json`；请预先创建该测试目录。测试使用隔离存档，不覆盖正常用户数据。
 
 ## 作品集边界
 

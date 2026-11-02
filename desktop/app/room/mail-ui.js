@@ -40,7 +40,7 @@
   document.getElementById('setupMouth').addEventListener('change',e=>{C.customize({mouth:e.target.value});clone.querySelector('[id="adopt-mouth"]').setAttribute('d',document.getElementById('mouth').getAttribute('d'));});
   document.getElementById('adoptionNext').onclick=()=>{const n=document.getElementById('setupName');if(!n.value.trim()){n.setCustomValidity('给小猫起一个名字吧。');n.reportValidity();return;}n.setCustomValidity('');step(2);};document.getElementById('adoptionBack').onclick=()=>step(1);document.getElementById('adoptionClose').onclick=()=>setup.close();setup.addEventListener('cancel',e=>{if(!profile.completed)e.preventDefault();});document.getElementById('birthdayMonth').onchange=updateDays;document.getElementById('adoptionForm').onsubmit=e=>{e.preventDefault();finish();};document.getElementById('birthdaySkip').onclick=()=>finish(true);document.getElementById('previewBirthday').onclick=()=>openMailbox('birthday');document.getElementById('previewHoliday').onclick=()=>openMailbox('midautumn');
   native?.onAction(action=>{if(action==='mailbox')openMailbox();});
-  document.querySelector('.edition').textContent='PAWSIDE · 桌边的小小陪伴';document.querySelector('.foot').innerHTML='<span>爪爪小窝 · 不用登录的日常陪伴</span><span>作品集体验版 / 0.2</span>';
+  document.querySelector('.edition').textContent='PAWSIDE · 桌边的小小陪伴';document.querySelector('.foot').innerHTML='<span>爪爪小窝 · 不用登录的日常陪伴</span><span>作品集体验版 / 0.3</span>';
   check();render();if(!profile.completed)openAdoption();
   setInterval(check,60000);document.addEventListener('visibilitychange',()=>{if(!document.hidden)check();});
 })();

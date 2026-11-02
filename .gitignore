@@ -4,3 +4,11 @@ node_modules/
 .env.*
 *.log
 smoke-profile/
+
+# Private runtime chat data must never enter source or release packages.
+**/chat-state.json
+**/chat-state.json.tmp
+**/deepseek-key.bin
+**/deepseek-key.bin.tmp
+**/companion.json
+**/chat-smoke-profile/

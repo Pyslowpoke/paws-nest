@@ -1,6 +1,6 @@
 {
   "name": "little-deskcat",
-  "version": "0.2.0",
+  "version": "0.3.0",
   "description": "爪爪小窝：桌边陪伴、生日与节日来信",
   "main": "app/main.cjs",
   "author": "Little Deskcat",
@@ -9,7 +9,7 @@
   "scripts": {
     "start": "electron .",
     "pack": "node build.mjs",
-    "test": "node test/mail.test.cjs"
+    "test": "node --test test/*.test.cjs"
   },
   "devDependencies": {
     "@electron/packager": "20.3.0",
