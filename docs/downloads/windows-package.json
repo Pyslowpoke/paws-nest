@@ -1,0 +1,79 @@
+{
+  "version": "0.3.0",
+  "fileName": "paws-nest-windows-portable.exe",
+  "bytes": 112106761,
+  "sha256": "99f8b6032378babe246ba2ae49787babe91cb956f1f6fabecd5b8cd70cb0d95a",
+  "originalZipBytes": 162526421,
+  "chunks": [
+    {
+      "path": "windows-99f8b6032378/part-00.bin",
+      "bytes": 8388608,
+      "sha256": "4516cfd74583eeda906633e9a81bdc097daae9a6ce6ccfb606e323d3fe3c08dd"
+    },
+    {
+      "path": "windows-99f8b6032378/part-01.bin",
+      "bytes": 8388608,
+      "sha256": "cc910a15cbbaa02f0f9e105cd3ff402dfde022bf2f8f69da0b459c775fd39c5a"
+    },
+    {
+      "path": "windows-99f8b6032378/part-02.bin",
+      "bytes": 8388608,
+      "sha256": "02d20727edd839372630d4b33cd84599e28783ffa405722bacc2b6798a1d647e"
+    },
+    {
+      "path": "windows-99f8b6032378/part-03.bin",
+      "bytes": 8388608,
+      "sha256": "3179f060ca73daf882b7b47042f93c670defe2287c9b5e8e70f6a357b7c015c0"
+    },
+    {
+      "path": "windows-99f8b6032378/part-04.bin",
+      "bytes": 8388608,
+      "sha256": "7f277a09bbae023ed51334d3be97cc331f41e1af68f2c84fba4133d1132f8946"
+    },
+    {
+      "path": "windows-99f8b6032378/part-05.bin",
+      "bytes": 8388608,
+      "sha256": "9a9275b261cd7480ea04d7edec2be13c225c7a779fa88862d8616352496e4377"
+    },
+    {
+      "path": "windows-99f8b6032378/part-06.bin",
+      "bytes": 8388608,
+      "sha256": "0f29006f3619255900ec75de3141343d75b81edaf3f94367530a807e4c217bc7"
+    },
+    {
+      "path": "windows-99f8b6032378/part-07.bin",
+      "bytes": 8388608,
+      "sha256": "151399f383374892e0afc31c2039d6dff32ff03704c8a9957510334be22848da"
+    },
+    {
+      "path": "windows-99f8b6032378/part-08.bin",
+      "bytes": 8388608,
+      "sha256": "78c7bc8328f23068fdd441cbd1e7e95165ea458674509b9c10f1d93323108694"
+    },
+    {
+      "path": "windows-99f8b6032378/part-09.bin",
+      "bytes": 8388608,
+      "sha256": "b6900fa6e55732761cb8dbebef34cd55734e540c5ffcbf4834c34e90bb2074c8"
+    },
+    {
+      "path": "windows-99f8b6032378/part-10.bin",
+      "bytes": 8388608,
+      "sha256": "4173059f0a3831f9108ba9306563241b68967f62616beea3874a0021c571263c"
+    },
+    {
+      "path": "windows-99f8b6032378/part-11.bin",
+      "bytes": 8388608,
+      "sha256": "68b3baa2f429effdedfdcd53c299a18f63441c03e5436004ea8cd7f02ee5dffd"
+    },
+    {
+      "path": "windows-99f8b6032378/part-12.bin",
+      "bytes": 8388608,
+      "sha256": "dfc6b75fa5b376e02f42422a1d45101ba344f5e825d8e999b066e08ac2367dc1"
+    },
+    {
+      "path": "windows-99f8b6032378/part-13.bin",
+      "bytes": 3054857,
+      "sha256": "6b1d599dde10dbf8a8b408d0d21d618968a2320ec970a6132c8c57e1708ec16f"
+    }
+  ]
+}

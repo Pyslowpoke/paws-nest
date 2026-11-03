@@ -1,6 +1,6 @@
 # 爪爪小窝 0.3
 
-> **直接使用请下载 [Windows 客户端](https://github.com/Pyslowpoke/paws-nest/releases/download/v0.3.0/paws-nest-windows-x64.zip)**，完整解压后运行 PawsNest.exe。源码包不含该程序，desktop/delivery 下的启动脚本是打包模板。
+> **直接使用请下载 [Windows 客户端](https://pyslowpoke.github.io/paws-nest/#download)**，完整解压后运行 PawsNest.exe。源码包不含该程序，desktop/delivery 下的启动脚本是打包模板。
 
 源码开发：安装 Node.js 22 或以上后，在 desktop 文件夹双击“开发启动.cmd”；首次运行会下载依赖。也可按下文使用 pnpm。
 
@@ -21,6 +21,18 @@
 关闭小屋会继续保留桌宠。彻底退出请用托盘菜单“退出爪爪小窝”。当前不包含自动开机启动。
 
 Windows 版是免安装便携应用，尚未购买代码签名证书。确认来源为本项目后使用。旧版 0.1 与新版共用本地存档；旧版还在运行时，请先从旧版托盘退出，再打开新版。
+
+官网另提供 `paws-nest-windows-portable.exe` 便携解压包：双击后选择目标文件夹，解压结束再打开其中的 `PawsNest.exe`。它与原 ZIP 使用相同的完整客户端，只改变压缩方式；不需要管理员权限，不添加注册表启动项、桌面快捷方式或系统服务。主入口从 GitHub Pages 下载，备用入口为 GitHub Release，两条路径仍受境外网络影响。
+
+### 维护者：生成便携解压包
+
+先完成上文的客户端打包，再从 NSIS 官方网站取得 NSIS 3 编译器，运行：
+
+```powershell
+./package-portable.ps1 -NsisCompiler 'C:/tools/nsis/makensis.exe' -ClientDirectory './build/爪爪小窝-Windows-v0.3-win32-x64' -OutputFile './build/paws-nest-windows-portable.exe'
+```
+
+脚本使用完整客户端目录与 LZMA 固实压缩，不裁减运行库或许可文件。发布前在独立目录验证解压结果，逐文件对比 SHA-256。更新 `docs/downloads/windows-package.json` 的大小与校验值，并同步官网标注。源码分发包应排除 `docs/downloads/`，避免把预编译客户端重复打包进去。
 
 ## 和小猫聊聊
 
