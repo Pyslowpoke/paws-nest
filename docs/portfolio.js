@@ -79,6 +79,14 @@
     like: ['我喜欢热可可，帮我记住好吗？', '热可可，咪记在小本本上了。今天也想捧着暖暖的杯子，歇一会儿吗？', '客户端可查看、删除或关闭偏好记忆；这里不保存资料。'],
     boundary: ['帮我写一份复杂的商业方案。', '这个有点难，咪的小脑袋还没弄明白。不过忙了这么久，要不要先伸个懒腰？咪陪你歇一下。', '小猫专注日常陪伴，复杂任务会轻轻转回陪伴场景。']
   };
+  let samplePetTimer;
+  $('samplePet').onclick = () => {
+    $('samplePet').classList.remove('petted');
+    requestAnimationFrame(() => $('samplePet').classList.add('petted'));
+    $('sampleMemory').textContent = '呼噜……小猫轻轻蹭了蹭你。';
+    clearTimeout(samplePetTimer);
+    samplePetTimer = setTimeout(() => $('samplePet').classList.remove('petted'), 2200);
+  };
   document.querySelectorAll('[data-chat]').forEach(button => button.addEventListener('click', () => {
     const [you, reply, note] = samples[button.dataset.chat];
     $('sampleYou').textContent = you;

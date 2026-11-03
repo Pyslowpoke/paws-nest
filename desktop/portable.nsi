@@ -9,18 +9,18 @@ Unicode True
 !ifndef OUTPUT_FILE
   !error "Pass /DOUTPUT_FILE with the output executable path"
 !endif
-Name "爪爪小窝 0.3 · 便携解压包"
+Name "爪爪小窝 0.3.1 · 便携解压包"
 OutFile "${OUTPUT_FILE}"
-InstallDir "$EXEDIR\PawsNest-v0.3"
+InstallDir "$EXEDIR\PawsNest-v0.3.1"
 RequestExecutionLevel user
 SetCompressor /SOLID lzma
 SetCompressorDictSize 64
 SetDatablockOptimize on
 BrandingText "爪爪小窝 · 给日常，添一点毛茸茸"
-VIProductVersion "0.3.0.0"
+VIProductVersion "0.3.1.0"
 VIAddVersionKey /LANG=2052 "ProductName" "爪爪小窝"
 VIAddVersionKey /LANG=2052 "FileDescription" "爪爪小窝 Windows x64 便携解压包"
-VIAddVersionKey /LANG=2052 "FileVersion" "0.3.0"
+VIAddVersionKey /LANG=2052 "FileVersion" "0.3.1"
 VIAddVersionKey /LANG=2052 "LegalCopyright" "Paws Nest contributors"
 !define MUI_WELCOMEPAGE_TITLE "把小猫带回桌面"
 !define MUI_WELCOMEPAGE_TEXT "选择一个文件夹，解压后即可使用爪爪小窝。$\r$\n$\r$\n不需要开发工具或 GPT 账号，也不需要管理员权限。$\r$\n$\r$\n如有旧版正在运行，请先从托盘菜单退出。此解压包不会删除你的本机存档。"

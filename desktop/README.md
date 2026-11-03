@@ -1,4 +1,4 @@
-# 爪爪小窝 0.3
+# 爪爪小窝 0.3.1
 
 > **直接使用请下载 [Windows 客户端](https://pyslowpoke.github.io/paws-nest/#download)**，完整解压后运行 PawsNest.exe。源码包不含该程序，desktop/delivery 下的启动脚本是打包模板。
 
@@ -29,14 +29,14 @@ Windows 版是免安装便携应用，尚未购买代码签名证书。确认来
 先完成上文的客户端打包，再从 NSIS 官方网站取得 NSIS 3 编译器，运行：
 
 ```powershell
-./package-portable.ps1 -NsisCompiler 'C:/tools/nsis/makensis.exe' -ClientDirectory './build/爪爪小窝-Windows-v0.3-win32-x64' -OutputFile './build/paws-nest-windows-portable.exe'
+./package-portable.ps1 -NsisCompiler 'C:/tools/nsis/makensis.exe' -ClientDirectory './build/爪爪小窝-Windows-v0.3.1-win32-x64' -OutputFile './build/paws-nest-windows-portable.exe'
 ```
 
 脚本使用完整客户端目录与 LZMA 固实压缩，不裁减运行库或许可文件。发布前在独立目录验证解压结果，逐文件对比 SHA-256。更新 `docs/downloads/windows-package.json` 的大小与校验值，并同步官网标注。源码分发包应排除 `docs/downloads/`，避免把预编译客户端重复打包进去。
 
 ## 和小猫聊聊
 
-从小屋、桌宠工具栏或托盘打开聊天，在「聊天设置」填写自己的 DeepSeek API Key。Key 由 Windows 加密保存在本机，不会写入源码或上传 GitHub。发送聊天时，请求会直接发给 DeepSeek，并携带近期对话及启用的偏好记忆。不要将 Key 发给项目作者。
+从小屋上方“和小猫说句话”、桌宠工具栏或托盘打开沟通场景。小猫坐在面前，用身边的气泡回应；可以摸摸它，历史记录默认收在“翻翻刚才的话”里。点右上角“咪的小本本”→“聊天设置”，填写自己的 DeepSeek API Key。Key 由 Windows 加密保存在本机，不会写入源码或上传 GitHub。发送聊天时，请求会直接发给 DeepSeek，并携带近期对话及启用的偏好记忆。不要将 Key 发给项目作者。
 
 小猫的职责是陪伴、倾听及轻松日常，不执行工作任务或提供专业决策。偏好可以查看、添加、删除，也可以关闭自动记忆；聊天记录可单独清空。详细行为边界、存储位置和清除方式见 [AI陪伴说明.md](AI陪伴说明.md)。
 

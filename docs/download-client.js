@@ -39,6 +39,16 @@
     if (action === 'put') memory.set(key, value);
     else memory.delete(key);
   }
+  async function pruneOldCache(clearAll = false) {
+    memory.forEach((_, key) => { if (clearAll || !key.startsWith(manifest.sha256 + ':')) memory.delete(key); });
+    if (!db) return;
+    try { await new Promise((resolve, reject) => {
+      const tx = db.transaction('chunks', 'readwrite'), store = tx.objectStore('chunks');
+      if (clearAll) store.clear();
+      else { const keys = store.getAllKeys(); keys.onsuccess = () => keys.result.forEach(key => { if (typeof key === 'string' && !key.startsWith(manifest.sha256 + ':')) store.delete(key); }); }
+      tx.oncomplete = resolve; tx.onerror = tx.onabort = reject;
+    }); } catch { /* Cache cleanup never blocks downloading. */ }
+  }
   function validate(m) {
     if (m.fileName !== 'paws-nest-windows-portable.exe' || !/^[a-f0-9]{64}$/.test(m.sha256) || !Array.isArray(m.chunks) || !m.chunks.length || m.chunks.length > 32) throw Error('下载信息不完整，请稍后再试。');
     if (m.chunks.some(c => !/^windows-[a-f0-9]{12}\/part-\d{2}\.bin$/.test(c.path) || !/^[a-f0-9]{64}$/.test(c.sha256) || !Number.isSafeInteger(c.bytes) || c.bytes < 1 || c.bytes > 8388608)) throw Error('下载信息校验失败。');
@@ -59,6 +69,7 @@
       if (!response.ok) throw Error('暂时无法取得下载信息，可使用下方备用入口。');
       manifest = validate(await response.json());
       await openStore();
+      await pruneOldCache();
       const parts = new Array(manifest.chunks.length), received = manifest.chunks.map(() => 0);
       let done = 0, cursor = 0;
       const progress = () => {
@@ -128,8 +139,7 @@
   dialog.addEventListener('close', () => { if (running) controller.abort(); });
   $('downloadClear').onclick = async () => {
     if (running) { note('请先暂停下载，再清理临时文件。'); return; }
-    if (manifest) await Promise.all(manifest.chunks.map((_, i) => cache('delete', manifest.sha256 + ':' + i)));
-    memory.clear();
-    note('本次下载的续传缓存已清理。已保存到电脑的文件不受影响。');
+    await pruneOldCache(true);
+    note('下载续传缓存已清理。游戏存档和已保存到电脑的文件不受影响。');
   };
 })();
